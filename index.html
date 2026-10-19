@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PWA GitHub</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <style>
+        body { font-family: sans-serif; background: #f3f4f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); width: 300px; }
+        h1 { color: #4F46E5; margin-top: 0; font-size: 24px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #d1d5db; border-radius: 6px; margin-bottom: 10px; }
+        button { width: 100%; background: #4F46E5; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #4338ca; }
+        ul { list-style: none; padding: 0; margin-top: 15px; }
+        li { background: #f9fafb; padding: 8px; border: 1px solid #e5e7eb; border-radius: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Minhas Tarefas</h1>
+        <input type="text" id="taskInput" placeholder="Nova tarefa...">
+        <button onclick="addTask()">Adicionar</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        // Registrar o Service Worker para suporte Offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log("Service Worker registrado com sucesso!"))
+                .catch(err => console.log("Falha ao registrar Service Worker:", err));
+        }
+
+        // Lógica simples do App
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            if (input.value.trim() === '') return;
+            const ul = document.getElementById('taskList');
+            const li = document.createElement('li');
+            li.innerHTML = `${input.value} <span style="cursor:pointer;color:red" onclick="this.parentElement.remove()">✕</span>`;
+            ul.appendChild(li);
+            input.value = '';
+        }
+    </script>
+</body>
+</html>

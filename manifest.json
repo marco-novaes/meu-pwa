@@ -1,0 +1,18 @@
+{
+    "name": "Meu Primeiro PWA GitHub",
+    "short_name": "PWA GitHub",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4F46E5",
+    "description": "Um aplicativo PWA simples rodando direto do GitHub Pages.",
+    "icons": [
+      {
+        "src": "https://flaticon.com",
+        "sizes": "512xl512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+  }
+  
