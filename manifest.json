@@ -1,24 +1,23 @@
 {
-    "name": "Meu Primeiro PWA GitHub",
-    "short_name": "PWA GitHub",
-    "start_url": "./index.html",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#4F46E5",
-    "description": "Um aplicativo PWA simples rodando direto do GitHub Pages.",
+    "short_name": "MeuPWA",
+    "name": "Meu Aplicativo PWA Instalável",
     "icons": [
       {
-        "src": "./icone.png",
-        "sizes": "192x192",
+        "src": "./icon-192.png",
         "type": "image/png",
-        "purpose": "any"
+        "sizes": "192x192"
       },
       {
-        "src": "./icone.png",
-        "sizes": "512x512",
+        "src": "./icon-512.png",
         "type": "image/png",
-        "purpose": "any"
+        "sizes": "512x512",
+        "purpose": "any maskable"
       }
-    ]
+    ],
+    "start_url": "./",
+    "background_color": "#f0f2f5",
+    "theme-color": "#6200ee",
+    "display": "standalone",
+    "orientation": "portrait"
   }
   
